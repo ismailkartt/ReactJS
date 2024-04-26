@@ -1,17 +1,18 @@
-import React from 'react'
+import React from "react";
 
 const Jsx4 = () => {
-
-    const names = ["Ali","Veli", "Ayşe"];
+  const names = ["Ali", "Veli", "Ayşe"];
 
 
   return (
     <div>
-        <ul>
-            {names.map((name,index)=><li key={index}>{name}</li>)}
-        </ul>
+      <ul>
+        {names.map((name, index) => (
+          <li key={index}>{name}</li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Jsx4
+export default Jsx4;

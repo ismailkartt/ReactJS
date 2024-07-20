@@ -1,3 +1,4 @@
+import Clock1 from "./components/05-clock1/clock1";
 
 const App = () => {
     return(

@@ -1,4 +1,7 @@
 import Clock1 from "./components/05-clock1/clock1";
+import Gallery from "./components/09-image/gallery";
+import Image from "./components/09-image/image";
+import Practice from "./components/10-practice/practice";
 
 const App = () => {
     return(
@@ -14,9 +17,14 @@ const App = () => {
         <Style2/>
         <Style3/>
         <Style4/>
+        <Clock1/>
+        <Image/>
+        <Gallery/>
         */}
         
-        <Clock1/>
+        <Practice/>
+
+   
 
         </div>
     )

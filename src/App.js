@@ -9,9 +9,14 @@ import BootstrapStatic from "./components/11-bootstrap/bootstrap-static";
 import Icon from "./components/12-icons/icon";
 import Events from "./components/13-events/events";
 import Shop from "./components/14-products/shop";
+import State from "./components/15-usestate/state";
 import Stateless from "./components/15-usestate/stateless";
+import Counter from "./components/16-counter/counter";
+import Birthday from "./components/17-birthday/birthday";
+import Birthday1 from "./components/17-birthday1/birthday";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
+import HomeWork2 from "./components/homework/04-homework/homework2";
 
 
 
@@ -114,10 +119,15 @@ const App = () => {
     <Events/>
     <Shop/>
     <Jsx7/>
+    <Stateless/>
+    <State/>
+    <Counter/> 
+    <HomeWork2/>
+    <Birthday1/>
         */}
       
-      <Stateless/>
-          
+      <Birthday/>
+         
 
         </div>
     )

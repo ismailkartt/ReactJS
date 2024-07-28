@@ -14,6 +14,12 @@ import Stateless from "./components/15-usestate/stateless";
 import Counter from "./components/16-counter/counter";
 import Birthday from "./components/17-birthday/birthday";
 import Birthday1 from "./components/17-birthday1/birthday";
+import UseEffect1 from "./components/18-useeffect/useeffect1";
+import UseEffect2 from "./components/18-useeffect/useeffect2";
+import UseEffect3 from "./components/18-useeffect/useeffect3";
+import UseEffect4 from "./components/18-useeffect/useeffect4";
+import Clock4 from "./components/19-clock4/clock4";
+import CountryFilter from "./components/20-country-filter/country-filter";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
@@ -124,9 +130,15 @@ const App = () => {
     <Counter/> 
     <HomeWork2/>
     <Birthday1/>
+    <Birthday/>
+    <UseEffect1/> 
+    <Clock4/>
+    <UseEffect2/>
+    <UseEffect3/>
+    <UseEffect4/>
         */}
       
-      <Birthday/>
+     <CountryFilter/>
          
 
         </div>

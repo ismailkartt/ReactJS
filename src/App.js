@@ -20,6 +20,9 @@ import UseEffect3 from "./components/18-useeffect/useeffect3";
 import UseEffect4 from "./components/18-useeffect/useeffect4";
 import Clock4 from "./components/19-clock4/clock4";
 import CountryFilter from "./components/20-country-filter/country-filter";
+import Scroll from "./components/21-useref/scroll";
+import UseRef from "./components/21-useref/useref";
+import ClassComp from "./components/22-class-type-component/class-comp";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
@@ -136,9 +139,13 @@ const App = () => {
     <UseEffect2/>
     <UseEffect3/>
     <UseEffect4/>
+    <CountryFilter/>
+    <UseRef/> 
+    <Scroll/>
+    <ClassComp/> 
         */}
       
-     <CountryFilter/>
+          
          
 
         </div>

@@ -23,6 +23,8 @@ import CountryFilter from "./components/20-country-filter/country-filter";
 import Scroll from "./components/21-useref/scroll";
 import UseRef from "./components/21-useref/useref";
 import ClassComp from "./components/22-class-type-component/class-comp";
+import UserCards from "./components/23-fecth-users/user-cards";
+import Cards from "./components/24-fetch-users-v1/user-cards";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
@@ -143,9 +145,11 @@ const App = () => {
     <UseRef/> 
     <Scroll/>
     <ClassComp/> 
+    <Cards/>
+     
         */}
       
-          
+    <UserCards/>
          
 
         </div>

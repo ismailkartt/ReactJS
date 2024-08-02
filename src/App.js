@@ -25,9 +25,17 @@ import UseRef from "./components/21-useref/useref";
 import ClassComp from "./components/22-class-type-component/class-comp";
 import UserCards from "./components/23-fecth-users/user-cards";
 import Cards from "./components/24-fetch-users-v1/user-cards";
+import Axios from "./components/25-axios/axios";
+import Countries from "./components/26-axios-contries/countries";
+import ParentComp from "./components/27-child-to-parent/parent-comp";
+import Form1 from "./components/28-forms/form1";
+import Form2 from "./components/28-forms/form2";
+import Form3 from "./components/28-forms/form3";
+import Form4 from "./components/28-forms/form4";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
+import TodoApp from "./components/homework/05-TodoApp/todo-app";
 
 
 
@@ -146,11 +154,18 @@ const App = () => {
     <Scroll/>
     <ClassComp/> 
     <Cards/>
-     
+    <UserCards/> 
+    <Axios/>
+    <Countries/>
+    <ParentComp/>
+    <Form1/>
+    <Form2/>
+    <TodoApp/>
+    <Form3/>
+    <Form4/> 
         */}
       
-    <UserCards/>
-         
+        
 
         </div>
     )

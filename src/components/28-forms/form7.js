@@ -1,9 +1,10 @@
+import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import * as Yup from "yup";
 
-const Form6 = () => {
+const Form7 = () => {
   const initialValues = {
     email: "",
     password: "",
@@ -17,8 +18,14 @@ const Form6 = () => {
     password: Yup.string().required("Şifrenizi giriniz"),
   });
 
-  const onSubmit = (values) => {
-    console.log(values)
+  const onSubmit = async (values) => {
+    try {
+      const resp = await axios.post("https://carrental-v3-backend.herokuapp.com/login",values);
+      localStorage.setItem("token",resp.data.token);
+
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   const formik = useFormik({
@@ -79,4 +86,4 @@ const Form6 = () => {
   );
 };
 
-export default Form6;
+export default Form7;

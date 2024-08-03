@@ -1,3 +1,11 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HelloWorld from "./components/01-hello-world/hello-world"
+import Jsx1 from "./components/03-jsx/jsx1";
+import Jsx2 from "./components/03-jsx/jsx2";
+import Jsx3 from "./components/03-jsx/jsx3";
+import Jsx4 from "./components/03-jsx/jsx4";
+import Jsx5 from "./components/03-jsx/jsx5";
+import Jsx6 from "./components/03-jsx/jsx6";
 import Jsx7 from "./components/03-jsx/jsx7";
 import Clock1 from "./components/05-clock1/clock1";
 import Gallery from "./components/09-image/gallery";
@@ -34,11 +42,15 @@ import Form3 from "./components/28-forms/form3";
 import Form4 from "./components/28-forms/form4";
 import Form5 from "./components/28-forms/form5";
 import Form6 from "./components/28-forms/form6";
+import Form7 from "./components/28-forms/form7";
 import FormikApp from "./components/29-formik/myform";
 import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
 import TodoApp from "./components/homework/05-TodoApp/todo-app";
+import Header from "./components/00-home/header/header";
+import { Col, Container, Row } from "react-bootstrap";
+import Menu from "./components/00-home/menu/menu";
 
 
 
@@ -46,7 +58,28 @@ import TodoApp from "./components/homework/05-TodoApp/todo-app";
 const App = () => {
     
     return(
-        <div>
+        <BrowserRouter>
+        <Header/>
+
+        <Container fluid>
+        <Row>
+            <Col sm={2}>
+                <Menu/>
+            </Col>
+            <Col sm={10}>
+                <Routes>
+                    <Route path="/hello-world" element={<HelloWorld/>}/>
+                    <Route path="/jsx1" element={<Jsx1/>}/>
+                    <Route path="/jsx2" element={<Jsx2/>}/>
+                    <Route path="/jsx3" element={<Jsx3/>}/>
+                    <Route path="/jsx4" element={<Jsx4/>}/>
+                    <Route path="/jsx5" element={<Jsx5/>}/>
+                    <Route path="/jsx6" element={<Jsx6/>}/>
+                </Routes>
+            </Col>
+        </Row>
+        </Container>
+
         {
         // const product = {
         //     title: "Women's Top",
@@ -56,13 +89,9 @@ const App = () => {
         //     rate: 5
         //   };
         
-        /* <HelloWorld/>
-        <Jsx1/>
-        <Jsx2/>
-        <Jsx3/>
-        <Jsx4/>
-        <Jsx5/>
-        <Jsx6/>
+        /* 
+        
+       
         <Style1/>
         <Style2/>
         <Style3/>
@@ -168,11 +197,13 @@ const App = () => {
     <Form4/> 
     <FormikApp/>
     <Form5/> 
+    <Form6/> 
+    <Form7/> 
         */}
+     
       
-    <Form6/>   
 
-        </div>
+        </BrowserRouter>
     )
 } 
 export default App;

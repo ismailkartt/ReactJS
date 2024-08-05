@@ -1,5 +1,9 @@
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HelloWorld from "./components/01-hello-world/hello-world"
+import { Col, Container, Row } from "react-bootstrap";
+import Header from "./components/00-home/header/header";
+import Menu from "./components/00-home/menu/menu";
+import HelloWorld from "./components/01-hello-world/hello-world";
 import Jsx1 from "./components/03-jsx/jsx1";
 import Jsx2 from "./components/03-jsx/jsx2";
 import Jsx3 from "./components/03-jsx/jsx3";
@@ -48,163 +52,101 @@ import Homework from "./components/homework/02-homework/homework";
 import Homework1 from "./components/homework/03-homework/homework1";
 import HomeWork2 from "./components/homework/04-homework/homework2";
 import TodoApp from "./components/homework/05-TodoApp/todo-app";
-import Header from "./components/00-home/header/header";
-import { Col, Container, Row } from "react-bootstrap";
-import Menu from "./components/00-home/menu/menu";
-
-
-
+import Exchange from './components/30-context/exchange';
+import StoreContext from './store';
+import axios from 'axios';
 
 const App = () => {
-    
-    return(
-        <BrowserRouter>
-        <Header/>
+    const [counter, setCounter] = useState(10)
+    const [currencies, setCurrencies] = useState({})
 
-        <Container fluid>
-        <Row>
-            <Col sm={2}>
-                <Menu/>
-            </Col>
-            <Col sm={10}>
-                <Routes>
-                    <Route path="/hello-world" element={<HelloWorld/>}/>
-                    <Route path="/jsx1" element={<Jsx1/>}/>
-                    <Route path="/jsx2" element={<Jsx2/>}/>
-                    <Route path="/jsx3" element={<Jsx3/>}/>
-                    <Route path="/jsx4" element={<Jsx4/>}/>
-                    <Route path="/jsx5" element={<Jsx5/>}/>
-                    <Route path="/jsx6" element={<Jsx6/>}/>
-                </Routes>
-            </Col>
-        </Row>
-        </Container>
-
-        {
-        // const product = {
-        //     title: "Women's Top",
-        //     image: '../../assets/img/person3.jpg', 
-        //     price: 70.00,
-        //     discount: 10,
-        //     rate: 5
-        //   };
-        
-        /* 
-        
-       
-        <Style1/>
-        <Style2/>
-        <Style3/>
-        <Style4/>
-        <Clock1/>
-        <Image/>
-        <Gallery/>
-        <Practice/>
-        <ProfileCard
-                src="profile.jpg"
-                name="Zisan"
-                location="Istanbul, Turkey"
-                statistics={
-                    [
-                        {
-                            stat: 8,
-                            title: "Shot"
-                        },
-                        {
-                            stat: 1000,
-                            title: "Followers"
-                        },
-                        {
-                            stat: 50,
-                            title: "Following"
-                        }
-                    ]
-                }
-            />
-            <Practice
-        src="profile.jpg"
-        name="Zisan"
-        location="Istanbul, Turkey"
-        statistics = {
-            [
-                {
-                    stat: 8,
-                    title: "Shot" 
-                },
-                {
-                    stat: 1000,
-                    title: "Followers"
-                },
-                {
-                    stat: 50,
-                    title: "Following" 
-                }
-            ]
+    const loadData = async () => { 
+        try {
+            const resp = await axios.get("https://api.frankfurter.app/latest?from=try");
+            setCurrencies(resp.data.rates);
+        } catch (err) {
+            console.log(err);
         }
+     }
+
+     useEffect(() => {
         
-        />
-        <Homework
-        src="person1.jpg"
-        rating={4} 
-        name="WOMEN'S TOP"
-        price="$19.99" 
-        />
-        <Homework
-        src="person3.jpg"
-        rating={3} 
-        name="WOMEN'S TOP"
-        price="$29.99" 
-        />
-         <div className="app">
-      <Homework1
-        title={product.title}
-        image={product.image}
-        price={product.price}
-        discount={product.discount}
-        rate={product.rate}
-      />
-    </div>
-    <BootstrapStatic/>
-    <BootstrapDynamic/>
-    <Icon/> 
-    <Events/>
-    <Shop/>
-    <Jsx7/>
-    <Stateless/>
-    <State/>
-    <Counter/> 
-    <HomeWork2/>
-    <Birthday1/>
-    <Birthday/>
-    <UseEffect1/> 
-    <Clock4/>
-    <UseEffect2/>
-    <UseEffect3/>
-    <UseEffect4/>
-    <CountryFilter/>
-    <UseRef/> 
-    <Scroll/>
-    <ClassComp/> 
-    <Cards/>
-    <UserCards/> 
-    <Axios/>
-    <Countries/>
-    <ParentComp/>
-    <Form1/>
-    <Form2/>
-    <TodoApp/>
-    <Form3/>
-    <Form4/> 
-    <FormikApp/>
-    <Form5/> 
-    <Form6/> 
-    <Form7/> 
-        */}
+        loadData();
      
-      
+       
+     }, [])
+     
 
-        </BrowserRouter>
-    )
-} 
+
+  return ( 
+    <StoreContext.Provider value={{counter,setCounter,currencies}}>
+    <BrowserRouter>
+      <Header />
+
+      <Container fluid>
+        <Row>
+          <Col sm={2}>
+            <Menu />
+          </Col>
+          <Col sm={10}>
+            <Routes>
+              <Route path="/hello-world" element={<HelloWorld />} />
+              <Route path="/jsx1" element={<Jsx1 />} />
+              <Route path="/jsx2" element={<Jsx2 />} />
+              <Route path="/jsx3" element={<Jsx3 />} />
+              <Route path="/jsx4" element={<Jsx4 />} />
+              <Route path="/jsx5" element={<Jsx5 />} />
+              <Route path="/jsx6" element={<Jsx6 />} />
+              <Route path="/jsx7" element={<Jsx7 />} />
+              <Route path="/clock1" element={<Clock1 />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/image" element={<Image />} />
+              <Route path="/practice" element={<Practice />} />
+              <Route path="/profile-card" element={<ProfileCard />} />
+              <Route path="/bootstrap-static" element={<BootstrapStatic />} />
+              <Route path="/bootstrap-dynamic" element={<BootstrapDynamic />} />
+              <Route path="/icon" element={<Icon />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/shop" element={<Shop />} />
+              <Route path="/stateless" element={<Stateless />} />
+              <Route path="/state" element={<State />} />
+              <Route path="/counter" element={<Counter />} />
+              <Route path="/homework" element={<Homework />} />
+              <Route path="/homework1" element={<Homework1 />} />
+              <Route path="/homework2" element={<HomeWork2 />} />
+              <Route path="/birthday1" element={<Birthday1 />} />
+              <Route path="/birthday" element={<Birthday />} />
+              <Route path="/useeffect1" element={<UseEffect1 />} />
+              <Route path="/useeffect2" element={<UseEffect2 />} />
+              <Route path="/useeffect3" element={<UseEffect3 />} />
+              <Route path="/useeffect4" element={<UseEffect4 />} />
+              <Route path="/clock4" element={<Clock4 />} />
+              <Route path="/country-filter" element={<CountryFilter />} />
+              <Route path="/useref" element={<UseRef />} />
+              <Route path="/scroll" element={<Scroll />} />
+              <Route path="/class-comp" element={<ClassComp />} />
+              <Route path="/cards" element={<Cards />} />
+              <Route path="/user-cards" element={<UserCards />} />
+              <Route path="/axios" element={<Axios />} />
+              <Route path="/countries" element={<Countries />} />
+              <Route path="/parent-comp" element={<ParentComp />} />
+              <Route path="/form1" element={<Form1 />} />
+              <Route path="/form2" element={<Form2 />} />
+              <Route path="/form3" element={<Form3 />} />
+              <Route path="/form4" element={<Form4 />} />
+              <Route path="/formik" element={<FormikApp />} />
+              <Route path="/form5" element={<Form5 />} />
+              <Route path="/form6" element={<Form6 />} />
+              <Route path="/form7" element={<Form7 />} />
+              <Route path="/todo-app" element={<TodoApp />} />
+              <Route path="/exchange" element={<Exchange />} />
+            </Routes>
+          </Col>
+        </Row>
+      </Container>
+    </BrowserRouter>
+    </StoreContext.Provider>
+  );
+}
+
 export default App;
-

@@ -1,0 +1,50 @@
+.main-nav {
+    /* Menüyü dikey olarak hizalar */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: #333;
+    border-radius: 0.5rem;
+  
+    ul {
+      list-style-type: none; // Madde işaretlerini kaldırır
+      margin: 0; // Varsayılan margin'i kaldırır
+      padding: 0; // Varsayılan padding'i kaldırır
+      width: 100%; // Menü genişliğini tam yapar
+  
+      li {
+        width: 100%; // Liste öğesinin genişliğini tam yapar
+  
+        a {
+          display: block; // Bağlantıyı blok düzeyinde yapar
+          padding: 0.5rem 1rem; // İç boşluk ekler
+          text-decoration: none; // Alt çizgiyi kaldırır
+          color: #fff; // Metin rengini beyaz yapar
+          font-size: 1.2rem; // Yazı tipi boyutu
+          transition: background-color 0.3s ease; // Arka plan rengi geçişi animasyonu
+  
+          &:hover {
+            background-color: #555; // Üzerine gelindiğinde arka plan rengi değişimi
+          }
+  
+          &::before {
+            content: "";
+            display: inline-block;
+            width: 5px;
+            height: 100%;
+            background-color: #f0a500;
+            margin-right: 1rem;
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+            vertical-align: middle;
+          }
+  
+          &:hover::before {
+            transform: scaleY(1);
+          }
+        }
+      }
+    }
+  }
+  

@@ -1,6 +1,28 @@
-header{
+header {
+    /* Metni ortalar */
     text-align: center;
+
+    /* Arka plan rengini chocolate yapar */
     background-color: chocolate;
+
+    /* Üst, alt iç boşlukları 2rem yapar */
     padding: 2rem;
+
+    /* Alt dış boşluğu 2rem yapar */
     margin-bottom: 2rem;
+
+    /* Metin rengi beyaz yapar */
+    color: white;
+
+    /* Yazı tipi boyutunu arttırır */
+    font-size: 1.5rem;
+
+    /* Yazı tipi kalınlığını ayarlar */
+    font-weight: bold;
+
+    /* Kutunun köşelerini hafifçe yuvarlar */
+    border-radius: 0.5rem;
+
+    /* Gölgeleme ekler */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
